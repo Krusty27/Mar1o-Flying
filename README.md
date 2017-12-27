@@ -5,9 +5,9 @@ Nothing but a sad mix of Flappy Bird and Mario
 Download the .zip file and extract it wherever you want, just remember the selected folder.
 
 # Requirements
-Python 2.7<br>
-Pygame<br>
-Colors.py
+[Python 2.7](python.org)<br>
+[Pygame](pygame.org)<br>
+[Colors.py](https://github.com/mattrobenolt/colors.py)
 
 
 # Installing
