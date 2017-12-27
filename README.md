@@ -19,4 +19,6 @@ when completed:<br>
 # Playing
 Open Terminal and run:<br>
 <code>cd [FOLDER WITH THE EXTRACTED FILES]</code><br>
-<code>python Mario.py</code>
+<code>python Mario.py</code><br>
+or, if you want to play [version2.0](https://github.com/Krusty27/Mar1o-Flying/blob/master/Mario2.py):<br>
+<code>python Mario2.py</code>
