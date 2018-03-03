@@ -26,3 +26,5 @@ Open Terminal and run:<br>
 <code>python Mario2.py</code><br>
 or, if you want to play [version1.0](https://github.com/Krusty27/Mar1o-Flying/blob/master/Mario2.py):<br>
 <code>python Mario.py</code>
+
+[Explaining video](https://filetea.me/n3w3mlxGEb0TYy6S5cUOzccxg)
