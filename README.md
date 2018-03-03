@@ -1,4 +1,8 @@
 # Mar1o-Flying
+
+[![Python Version](https://img.shields.io/badge/python-2.7-blue.svg)](https://www.python.org/download/releases/2.7.6/)
+[![Stars](https://img.shields.io/amo/stars/dustman.svg)](https://github.com/Krusty27/Mar1o-Flying/stargazers)
+
 Nothing but a sad mix of Flappy Bird and Mario
 
 # Download
