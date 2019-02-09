@@ -59,12 +59,14 @@ def a_on_b(a, b):
 		   a_center[Y] < b[Y] + b[HEIGHT]
 
 def render_time(time):
-	print "mancano", time, "secondi", coin[VX]
+	print "mancano", time, "secondi", velocita[0]
 def render_points(points):
 	print points
 
 screen = pygame.display.set_mode((WINDOW_X_SIZE, WINDOW_Y_SIZE), DOUBLEBUF | HWSURFACE, 32)
 pygame.display.set_caption("Flying Mario")
+
+velocita = [0.5, 0.05]
 
 sfondo = pygame.image.load(sfondo)
 sfondo = pygame.transform.scale(sfondo, (WINDOW_X_SIZE, WINDOW_Y_SIZE))
@@ -78,6 +80,8 @@ rainbowcoin_image = pygame.image.load("./RainbowCoin.png")
 rainbowcoin_image = pygame.transform.scale(rainbowcoin_image, (120, 100))
 rainbowcoin = [WINDOW_X_SIZE+50, random.randint(0, WINDOW_Y_SIZE - 80), -6, 8, 80, 80, rainbowcoin_image]
 r = [WINDOW_X_SIZE/5, WINDOW_Y_SIZE/5, WINDOW_X_SIZE/1.5, WINDOW_Y_SIZE/1.5]
+
+
 
 pygame.font.init()
 font = pygame.font.SysFont(None, 35)
@@ -102,7 +106,7 @@ def gameloop():
 
 	done = False
 	gameover = False
-	time_remained = 60*30
+	time_remained = 30*60
 	score = 0
 	coinblit = True
 	rainbowcoinblit = False
@@ -165,13 +169,13 @@ def gameloop():
 
 		pressed = pygame.key.get_pressed()
 		if pressed[pygame.K_UP]:
-			mario[VY] -= 1.5
+			mario[VY] -= velocita[0]
 		if pressed[pygame.K_DOWN]:
-			mario[VY] += 1.5
+			mario[VY] += velocita[0]
 		if pressed[pygame.K_RIGHT]:
-			mario[VX] += 1.5
+			mario[VX] += velocita[0]
 		if pressed[pygame.K_LEFT]:
-			mario[VX] -= 1.5
+			mario[VX] -= velocita[0]
 
 		if a_on_b(mario, coin):
 			coinblit = False
@@ -179,6 +183,7 @@ def gameloop():
 			pygame.mixer.music.play(loops = 0, start = 0.0)
 			score += 1
 			coin[VX] -= 0.5
+			velocita[0] += velocita[1]
 			print score
 
 		if coin[X] < 0 - coin[WIDTH] :
@@ -205,6 +210,7 @@ def gameloop():
 				score += 3
 				print score
 				coin[VX] -= 0.7
+				
 				coinblit = True
 				rainbowcoinblit = False
 			if rainbowcoin[X] < 0:
